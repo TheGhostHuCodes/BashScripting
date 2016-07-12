@@ -1,0 +1,23 @@
+#!/bin/bash
+# Script that shows how arguments are handled
+
+echo "\$* gives $*"
+echo "\$# gives $#"
+# shellcheck disable=SC2145
+echo "\$@ gives $@"
+echo "\$0 is $0"
+
+# Showing the interpretation of \$*
+# shellcheck disable=SC2066
+for i in "$*"
+do
+    echo "$i"
+done
+
+# Showing the interpretation of \$@
+for j in "$@"
+do
+    echo "$j"
+done
+
+exit 0
