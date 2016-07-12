@@ -1,0 +1,12 @@
+#!/bin/bash
+#
+# Showing variable use between shells
+
+echo "which directory do you want to activate"
+read -r DIR
+
+cd "$DIR" || exit 1
+pwd
+ls
+
+exit 0
