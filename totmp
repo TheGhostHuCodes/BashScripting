@@ -1,0 +1,21 @@
+#!/bin/bash
+# Copies all files provided as arguments to the user's home directory.
+
+HOME_TEMP=~/temp
+mkdir $HOME_TEMP
+
+if [ -z "$1" ]
+then
+    echo provide filenames:
+    read -r FILENAMES
+else
+    FILENAMES=( "$@" )
+fi
+
+echo "the following filenames will be copied to home:"
+
+for i in "${FILENAMES[@]}"
+do 
+    echo "$i"
+    cp "$i" "$HOME_TEMP/$i.tmp"
+done
