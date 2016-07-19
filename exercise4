@@ -1,0 +1,9 @@
+#!/bin/bash
+
+LDAP="cn=lara,dc=example,dc=com"
+
+USER=$(echo "$LDAP" | cut -f 1 -d , -)
+USERNAME=$(echo "$USER" | cut -f 2 -d = -)
+NAME=$(echo "$USERNAME" | tr '[:lower:]' '[:upper:]')
+
+echo "$NAME"
