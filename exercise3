@@ -1,0 +1,13 @@
+#!/bin/bash
+
+DATE=$(date +%d-%m-%y)
+echo "$DATE"
+
+DAY=${DATE%%-*}
+MONTH=${DATE%-*}
+MONTH=${MONTH#*-}
+YEAR=${DATE##*-}
+
+echo "The day is $DAY"
+echo "The month is $MONTH"
+echo "The year is $YEAR"
