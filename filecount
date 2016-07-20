@@ -1,0 +1,12 @@
+#!/bin/bash
+# This script counts files
+echo "Which directory do you want to count?"
+read -r DIR
+cd "$DIR" || exit 1
+COUNTER=0
+
+for _ in *
+do
+    COUNTER=$((COUNTER + 1))
+    echo "I have counted $COUNTER files in this directory"
+done
