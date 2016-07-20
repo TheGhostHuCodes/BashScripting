@@ -1,0 +1,10 @@
+#!/bin/bash
+
+cat ldapusers | while IFS= read -r LINE
+do
+    USER=$(echo "$LINE" | cut -f 1 -d , -)
+    USERNAME=$(echo "$USER" | cut -f 2 -d = -)
+    NAME=$(echo "$USERNAME" | tr '[:upper:]' '[:lower:]')
+
+    echo "useradd $NAME"
+done
