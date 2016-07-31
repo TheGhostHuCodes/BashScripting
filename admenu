@@ -1,0 +1,20 @@
+#!/bin/bash
+# Sample administration menu.
+
+echo 'Select a task: '
+select TASK in 'Check mounts' 'Check disk space'
+do
+    case $REPLY in
+        1) TASK=mount;;
+        2) TASK="df -h";;
+        *) echo "ERROR" && exit 2;;
+    esac
+    if [[ -n $TASK ]]
+    then
+        clear
+        $TASK
+        break
+    else
+        echo "INVALID CHOISE" && exit 3
+    fi
+done
